@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import HomeClient from "@/components/home/HomeClient";
-import Hero from "@/components/home/Hero";
+import HomeClient from "@/components/Home/HomeClient";
+import Hero from "@/components/Home/Hero";
 
 export const metadata: Metadata = {
   title: "Fullstack Developer — Python, Java, React",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HomeClient />
+      <Hero/>
 
       {/*<Hero />*/}
     </>
