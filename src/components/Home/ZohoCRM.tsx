@@ -381,19 +381,57 @@ const ZohoCRM = () => {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 className="px-5 sm:px-6 pb-6 grid md:grid-cols-2 gap-6 border-t border-border pt-6"
                                             >
-                                                {/* content unchanged */}
                                                 <div>
                                                     <p className="text-sm text-foreground/90">
                                                         {cs.problem}
                                                     </p>
+
+                                                    <div className="mt-4">
+                                                        <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                                                            Architecture
+                                                        </div>
+                                                        <ul className="text-sm text-foreground/90 space-y-1">
+                                                            {cs.architecture.map((a) => (
+                                                                <li key={a} className="flex gap-2">
+                                                                    <span className="text-primary mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
+                                                                    <span>{a}</span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+
+                                                    <div className="mt-4">
+                                                        <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                                                            Solution
+                                                        </div>
+                                                        <ul className="text-sm text-foreground/90 space-y-1">
+                                                            {cs.solution.map((s) => (
+                                                                <li key={s} className="flex gap-2">
+                                                                    <span className="text-primary mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
+                                                                    <span>{s}</span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
                                                 </div>
 
-                                                <div className="rounded-lg bg-primary/10 border border-primary/20 p-4">
-                                                    {cs.results.map((r) => (
-                                                        <div key={r} className="text-sm font-medium">
-                                                            • {r}
-                                                        </div>
-                                                    ))}
+                                                <div>
+                                                    <div className="rounded-lg bg-primary/10 border border-primary/20 p-4">
+                                                        {cs.results.map((r) => (
+                                                            <div key={r} className="text-sm font-medium">
+                                                                • {r}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="rounded-lg bg-primary/10 border border-primary/20 p-4 mt-4">
+                                                        <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Decisions</div>
+                                                        {cs.decisions.map((d) => (
+                                                            <div key={d} className="text-sm font-medium">
+                                                                • {d}
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         )}
