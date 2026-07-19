@@ -3,6 +3,7 @@ import HomeClient from "@/components/Home/HomeClient";
 import Hero from "@/components/Home/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import ZohoCRM from "@/components/ZohoCRM";
 
 export const metadata: Metadata = {
   title: "Fullstack Developer — Python, Java, React",
@@ -30,6 +31,7 @@ export default function HomePage() {
       <Hero/>
       <About/>
       <Services/>
+      <ZohoCRM/>
 
       {/*<Hero />*/}
     </>
