@@ -113,7 +113,7 @@ const Blog = () => {
                 >
                     <div className="max-w-2xl">
                         <div className="text-sm font-mono text-primary mb-3">
-                            // From the blog
+                            {"// From the blog"}
                         </div>
                         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
                             Notes on building{" "}

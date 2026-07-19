@@ -64,7 +64,7 @@ const About = () => {
                     {/* LEFT */}
                     <div className="max-w-2xl">
                         <div className="text-sm font-mono text-primary mb-3">
-                            // About
+                            {"// About"}
                         </div>
 
                         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-tight">

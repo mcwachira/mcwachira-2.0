@@ -131,11 +131,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     src={p.image}
                     alt={`${p.title} preview`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/80 backdrop-blur text-xs font-medium border border-border">
-                    {p.category}
-                </div>
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/80 backdrop-blur text-xs font-medium border border-border">
+                {p.category}
+            </div>
             </div>
 
             {/* Content */}
@@ -224,7 +225,7 @@ const Projects = () => {
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-14">
                     <div className="max-w-2xl">
                         <div className="text-sm font-mono text-primary mb-3">
-                            // Selected work
+                            {"// Selected work"}
                         </div>
                         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                             Real problems,{" "}

@@ -26,6 +26,7 @@ type Capability = {
     tag: string;
     points: string[];
 };
+type StackGroup = { label: string; items: string[] };
 
 const capabilities: Capability[] = [
     {
@@ -215,10 +216,10 @@ const CapabilityCard = ({ c }: { c: Capability }) => (
     </motion.div>
 );
 
-const StackGroupCard = ({ g }: any) => (
+const StackGroupCard = ({ g }:{g:StackGroup}) => (
     <div className="rounded-2xl border border-border bg-card p-5">
         <div className="text-xs font-mono text-primary mb-3">
-            // {g.label.toLowerCase()}
+            {`// ${g.label.toLowerCase()}`}
         </div>
         <div className="flex flex-wrap gap-1.5">
             {g.items.map((i: string) => (
@@ -286,7 +287,7 @@ const ZohoCRM = () => {
                 <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 mb-12 sm:mb-16">
                     <div className="flex items-center gap-2 mb-5">
                         <Workflow size={16} className="text-primary" />
-                        <div className="text-sm font-mono text-primary">// system flow</div>
+                        <div className="text-sm font-mono text-primary">{"// system flow"}</div>
                     </div>
 
                     <h3 className="font-display text-lg sm:text-xl font-semibold mb-6">
@@ -332,7 +333,7 @@ const ZohoCRM = () => {
 
                 {/* Case studies */}
                 <div className="mb-12 sm:mb-16">
-                    <div className="text-sm font-mono text-primary mb-2">// case studies</div>
+                    <div className="text-sm font-mono text-primary mb-2">{"// case studies"}</div>
 
                     <h3 className="font-display text-xl sm:text-2xl font-bold mb-6">
                         Systems shipped, measured, and running in production.

@@ -47,7 +47,7 @@ const Services = () => {
             <div className="container-tight">
                 <div className="max-w-2xl mb-14">
                     <div className="text-sm font-mono text-primary mb-3">
-                        // What I build
+                        {"// What I build"}
                     </div>
 
                     <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
