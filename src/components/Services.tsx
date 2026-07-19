@@ -56,7 +56,7 @@ const Services = () => {
                     </h2>
 
                     <p className="mt-4 text-muted-foreground text-base sm:text-lg">
-                        I'm stack-agnostic. I'll recommend the right tools for your project — not the ones I'm tied to.
+                        I&#39;m stack-agnostic. I&#39;ll recommend the right tools for your project — not the ones I'm tied to.
                     </p>
                 </div>
 
