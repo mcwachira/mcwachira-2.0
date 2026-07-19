@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HomeClient from "@/components/Home/HomeClient";
 import Hero from "@/components/Home/Hero";
+import About from "@/components/About";
 
 export const metadata: Metadata = {
   title: "Fullstack Developer — Python, Java, React",
@@ -26,6 +27,7 @@ export default function HomePage() {
   return (
     <>
       <Hero/>
+      <About/>
 
       {/*<Hero />*/}
     </>
