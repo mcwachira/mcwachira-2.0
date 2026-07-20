@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Target, Lightbulb, TrendingUp } from "lucide-react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 
 import ecommerce from "@/assets/project-ecommerce.jpg";
@@ -14,7 +14,7 @@ type LangColor = "python" | "java" | "csharp" | "js" | "ts" | "go";
 interface Project {
     title: string;
     category: string;
-    image: string;
+    image: StaticImageData;
     challenge: string;
     solution: string;
     result: string;
@@ -240,7 +240,7 @@ const Projects = () => {
 
                 {/* Grid */}
                 <div className="grid gap-6 sm:grid-cols-2">
-                    {projects
+                    {[...projects]
                         .sort((a, b) => Number(b.featured) - Number(a.featured))
                         .map((p) => (
                             <ProjectCard key={p.title} project={p} />

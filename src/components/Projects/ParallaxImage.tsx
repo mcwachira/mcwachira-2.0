@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 
-export default function ParallaxImage({ children }: any) {
+export default function ParallaxImage({ children }: { children: ReactNode }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
 
