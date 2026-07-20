@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "fintrack-loan-platform",
+    "title": "FinTrack — Loan Management Platform",
+    "category": "Web App",
+    "description": "Multi-tenant SaaS that replaced a Kenyan microfinance company's spreadsheet-based loan tracking.",
+    "challenge": "Acacia tracked 2,400+ active loans manually, causing delays and reporting errors.",
+    "solution": "Built a full SaaS with Django backend, React dashboard, role-based access, and automated SMS reminders.",
+    "results": [
+      "60% faster loan processing",
+      "3x more enquiries handled",
+      "Shipped in 8 weeks",
+      "5-star client rating"
+    ],
+    "tech": ["Python", "Django", "PostgreSQL", "React", "TypeScript", "AWS"],
+    "year": "2026",
+    "duration": "8 weeks",
+    "role": "Lead Fullstack Developer",
+    "client": "Acacia Microfinance",
+    "industry": "FinTech",
+    "gallery": ["/images/fin1.png", "/images/fin2.png"],
+    "testimonial": {
+      "quote": "Mcwachira shipped in 2 months what we quoted 6 for.",
+      "name": "Joseph Kamau",
+      "title": "CTO"
+    },
+    "related": ["api-orchestrator"]
+  },
+  {
+    "slug": "api-orchestrator",
+    "title": "API Orchestrator for Logistics",
+    "category": "API & Backend",
+    "description": "Spring Boot service unifying 7 carrier APIs into a single REST + GraphQL interface.",
+    "challenge": "Logistics company struggled managing multiple inconsistent APIs.",
+    "solution": "Created unified API gateway with caching, retry logic, and monitoring.",
+    "results": ["4 APIs instead of 7", "P95 latency 220ms", "99.95% uptime"],
+    "tech": ["Java", "Spring Boot", "PostgreSQL", "Docker", "GraphQL"],
+    "year": "2025",
+    "duration": "6 weeks",
+    "role": "Backend Engineer",
+    "client": "SwiftRoute",
+    "industry": "Logistics",
+    "gallery": ["/images/api1.png"],
+    "related": ["fintrack-loan-platform"]
+  },
+  {
+    "slug": "retail-analytics-dashboard",
+    "title": "Retail Analytics Dashboard",
+    "category": "Web App",
+    "description": "Real-time analytics dashboard tracking sales, inventory, and footfall across 14 stores.",
+    "challenge": "No visibility into real-time business performance.",
+    "solution": "Built real-time dashboard with streaming data pipelines.",
+    "results": [
+      "Real-time across 14 stores",
+      "30% reduction in stockouts",
+      "Built in 5 weeks"
+    ],
+    "tech": ["Next.js", "Node.js", "MongoDB", "Tailwind"],
+    "year": "2025",
+    "duration": "5 weeks",
+    "role": "Fullstack Developer",
+    "client": "RetailCo",
+    "industry": "Retail",
+    "gallery": ["/images/retail1.png"],
+    "related": ["fintrack-loan-platform"]
+  },
+  {
+    "slug": "saharan-travel",
+    "title": "Saharan Travel — Booking Platform",
+    "category": "Custom Website",
+    "description": "High-conversion travel booking site with CMS and booking automation.",
+    "challenge": "Low conversion rates and poor UX.",
+    "solution": "Redesigned UX + added booking automation.",
+    "results": ["3x more enquiries", "Lighthouse 98/100", "Launched in 3 weeks"],
+    "tech": ["Next.js", "React", "PostgreSQL"],
+    "year": "2024",
+    "duration": "3 weeks",
+    "role": "Frontend Lead",
+    "client": "Saharan Travel",
+    "industry": "Travel",
+    "gallery": ["/images/travel1.png"],
+    "related": []
+  }
+]

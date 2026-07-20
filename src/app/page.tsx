@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import HomeClient from "@/components/Home/HomeClient";
 import Hero from "@/components/Home/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import ZohoCRM from "@/components/ZohoCRM";
-import Testimonials from "@/components/Testimonials";
-import Blog from "@/components/Blog";
-import Contact from "@/components/Contact";
+import About from "@/components/Home/About";
+import Services from "@/components/Home/Services";
+import ZohoCRM from "@/components/Home/ZohoCRM";
+import Testimonials from "@/components/Home/Testimonials";
+import Blog from "@/components/Home/Blog";
+import Contact from "@/components/Home/Contact";
 
 export const metadata: Metadata = {
   title: "Fullstack Developer — Python, Java, React",
