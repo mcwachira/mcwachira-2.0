@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getProjects } from "@/lib/getProjects";
+import { useState } from "react";
+import { getProjects, type Project } from "@/lib/getProjects";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import { motion } from "framer-motion";
 
@@ -13,16 +13,8 @@ const filters = [
 ];
 
 export default function Work() {
-    const [projects, setProjects] = useState<any[]>([]);
+    const [projects] = useState<Project[]>(getProjects());
     const [filter, setFilter] = useState("All");
-    const [loading, setLoading] = useState(true);
-
-    // ✅ Future-proof data loading (works with async later)
-    useEffect(() => {
-        const data = getProjects();
-        setProjects(data);
-        setLoading(false);
-    }, []);
 
     const filtered =
         filter === "All"
@@ -37,14 +29,14 @@ export default function Work() {
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-12"
             >
-                <p className="text-sm text-primary mb-2">// projects</p>
+                <p className="text-sm text-primary mb-2">{"// projects"}</p>
 
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">
                     Selected work.
                 </h1>
 
                 <p className="text-muted-foreground max-w-xl">
-                    Here's what I've actually shipped. Real projects, real results.
+                    {"Here&apos;s what I&apos;ve actually shipped. Real projects, real results."}
                 </p>
             </motion.div>
 
@@ -65,26 +57,16 @@ export default function Work() {
                 ))}
             </div>
 
-            {/* LOADING STATE */}
-            {loading && (
-                <div className="text-muted-foreground text-sm">
-                    Loading projects...
-                </div>
-            )}
-
             {/* PROJECTS */}
-            {!loading && (
-                <div className="space-y-20">
-                    {filtered.map((p, i) => (
-                        <ProjectCard
-                            key={p.slug}
-                            project={p}
-                            index={i}
-                            prefetch // ⚡ ensures Next preloads dynamic routes
-                        />
-                    ))}
-                </div>
-            )}
+            <div className="space-y-20">
+                {filtered.map((p, i) => (
+                <ProjectCard
+                    key={p.slug}
+                    project={p}
+                    index={i}
+                />
+                ))}
+            </div>
         </section>
     );
 }

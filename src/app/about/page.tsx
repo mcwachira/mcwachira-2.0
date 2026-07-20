@@ -98,7 +98,7 @@ export default function AboutPage() {
                 </motion.div>
 
                 <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl font-bold mb-3">
-                    Hi, I'm Mcwachira.
+                    Hi, I&apos;m Mcwachira.
                 </motion.h1>
 
                 <motion.p variants={fadeUp} className="text-muted-foreground mb-6">
@@ -106,19 +106,19 @@ export default function AboutPage() {
                 </motion.p>
 
                 <motion.p variants={fadeUp} className="mb-4 text-sm text-muted-foreground">
-                    I've been building software for 4 years — working on e-commerce platforms,
+                    I&apos;ve been building software for 4 years — working on e-commerce platforms,
                     dashboards, APIs, and business systems across Kenya and East Africa.
                 </motion.p>
 
                 <motion.blockquote variants={fadeUp} className="text-lg italic border-l-2 border-primary pl-4 text-muted-foreground">
-                    “I've tried a lot of tools. These are the ones I'd bet a project on.”
+                    &quot;I&apos;ve tried a lot of tools. These are the ones I&apos;d bet a project on.&quot;
                 </motion.blockquote>
             </motion.section>
 
             {/* SKILLS */}
             <section className="mb-24">
                 <div className="mb-12">
-                    <p className="text-sm text-primary/70 mb-2">// skills</p>
+                    <p className="text-sm text-primary/70 mb-2">{"// skills"}</p>
                     <h2 className="text-3xl sm:text-4xl font-bold">What I work with.</h2>
                 </div>
 
@@ -159,7 +159,7 @@ export default function AboutPage() {
             {/* TIMELINE */}
             <section className="mb-24" ref={timelineRef}>
                 <div className="mb-10">
-                    <p className="text-sm text-primary/70 mb-2">// experience</p>
+                    <p className="text-sm text-primary/70 mb-2">{"// experience"}</p>
                     <h2 className="text-2xl sm:text-3xl font-bold">A short timeline.</h2>
                 </div>
 
@@ -201,7 +201,7 @@ export default function AboutPage() {
             {/* VALUES */}
             <section className="mb-24">
                 <div className="mb-10">
-                    <p className="text-sm text-primary/70 mb-2">// how I work</p>
+                    <p className="text-sm text-primary/70 mb-2">{"// how I work"}</p>
                     <h2 className="text-2xl sm:text-3xl font-bold">How I work.</h2>
                 </div>
 
@@ -225,7 +225,7 @@ export default function AboutPage() {
             {/* TESTIMONIALS */}
             <section className="mb-24">
                 <div className="mb-10">
-                    <p className="text-sm text-primary/70 mb-2">// testimonials</p>
+                    <p className="text-sm text-primary/70 mb-2">{"// testimonials"}</p>
                     <h2 className="text-2xl sm:text-3xl font-bold">What clients say.</h2>
                 </div>
 
@@ -239,7 +239,7 @@ export default function AboutPage() {
                             transition={{ delay: i * 0.1 }}
                             className="group p-5 border border-border rounded-2xl bg-card/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,0,0,0.15)]"
                         >
-                            <p className="text-sm">"{t.quote}"</p>
+                            <p className="text-sm">&quot;{t.quote}&quot;</p>
 
                             <div className="mt-4 text-xs">
                                 <div className="font-medium">{t.name}</div>
@@ -258,11 +258,11 @@ export default function AboutPage() {
                 className="rounded-3xl border border-border p-10 text-center bg-gradient-to-br from-card to-card/40"
             >
                 <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
-                    Have a project in mind? Let’s figure out if I’m the right fit.
+                    Have a project in mind? Let&apos;s figure out if I&apos;m the right fit.
                 </h2>
 
                 <p className="text-sm text-muted-foreground mb-6">
-                    Tell me about your project — I’ll recommend the right stack and timeline.
+                    Tell me about your project — I&apos;ll recommend the right stack and timeline.
                 </p>
 
                 <Button asChild size="lg" className="rounded-full">

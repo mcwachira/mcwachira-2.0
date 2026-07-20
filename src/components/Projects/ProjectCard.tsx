@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import type { Project } from "@/lib/getProjects";
 
-export default function ProjectCard({ project, index }: any) {
-    const isReverse = index % 2 === 1;
+export default function ProjectCard({ project, index }: { project: Project; index?: number }) {
+    const isReverse = (index ?? 0) % 2 === 1;
 
     return (
         <motion.article
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.08 }}
+            transition={{ delay: (index ?? 0) * 0.08 }}
             className={`grid md:grid-cols-2 gap-10 items-center`}
         >
             {/* IMAGE */}
