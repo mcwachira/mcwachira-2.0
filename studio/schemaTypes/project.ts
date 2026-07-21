@@ -19,7 +19,7 @@ export const projectType = defineType({
         source: 'title',
         maxLength: 96,
       },
-      validation: (rule) => rule.required().unique(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
