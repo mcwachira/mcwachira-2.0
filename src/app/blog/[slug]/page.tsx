@@ -24,11 +24,13 @@ const formatDate = (date: string) =>
 const portableTextComponents: PortableTextComponents = {
     types: {
         image: ({ value }: { value: SanityImage & { alt?: string } }) => (
-            <figure className="my-8">
-                <img
+            <figure className="relative my-8 aspect-[16/10]">
+                <Image
                     src={urlFor(value).width(800).auto("format").url()}
                     alt={value.alt || ""}
-                    className="rounded-xl w-full"
+                    fill
+                    className="object-cover rounded-xl"
+                    sizes="(max-width: 768px) 100vw, 800px"
                 />
                 {value.alt && (
                     <figcaption className="text-center text-sm text-muted-foreground mt-2">
