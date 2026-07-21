@@ -18,7 +18,7 @@ export async function POST(req: Request) {
             from: "Portfolio <onboarding@resend.dev>",
             to: "hello@mcwachira.com",
             subject: `New message from ${name}`,
-            reply_to: email,
+            replyTo: email,
             html: `
         <h2>New Contact Message</h2>
         <p><strong>Name:</strong> ${name}</p>
