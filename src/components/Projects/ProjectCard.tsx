@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { Project } from "@/lib/getProjects";
+import type { Project } from "@/lib/sanity/queries";
 
 export default function ProjectCard({ project, index }: { project: Project; index?: number }) {
     const isReverse = (index ?? 0) % 2 === 1;
@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
 
                 {/* RESULTS */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                    {project.results.slice(0, 3).map((r: string) => (
+                    {(project.results ?? []).slice(0, 3).map((r: string) => (
                         <span
                             key={r}
                             className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20"
@@ -48,7 +48,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
 
                 {/* TECH */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((t: string) => (
+                    {(project.tech ?? []).map((t: string) => (
                         <span
                             key={t}
                             className="px-2 py-0.5 rounded-full text-xs border bg-muted/40"

@@ -23,6 +23,8 @@ const coverUrl = (p: Blog) =>
         ? urlFor(p.cover).width(800).auto("format").url()
         : null;
 
+const primaryCategory = (post: Blog): string => post.category || "Uncategorized";
+
 export default function BlogClient({ blogs }: { blogs: Blog[] }) {
     const [cat, setCat] = useState("All");
 
@@ -139,11 +141,11 @@ export default function BlogClient({ blogs }: { blogs: Blog[] }) {
                                 </h2>
 
                                 <p className="text-muted-foreground mb-4 line-clamp-3">
-                                    {featured.excerpt}
+                                    {featured.description}
                                 </p>
 
                                 <div className="text-xs text-muted-foreground mb-6">
-                                    {formatDate(featured.publishedAt)}
+                                    {formatDate(featured.date)}
                                 </div>
 
                                 <span className="text-primary inline-flex items-center gap-2">
@@ -204,11 +206,11 @@ export default function BlogClient({ blogs }: { blogs: Blog[] }) {
                                     </h3>
 
                                     <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                                        {p.excerpt}
+                                        {p.description}
                                     </p>
 
                                     <div className="text-xs text-muted-foreground flex justify-between">
-                                        <span>{formatDate(p.publishedAt)}</span>
+                                        <span>{formatDate(p.date)}</span>
 
                                         <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                       Read <ArrowRight size={12} />

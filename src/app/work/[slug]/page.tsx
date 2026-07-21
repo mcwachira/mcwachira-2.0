@@ -1,15 +1,23 @@
-import { getProject, getProjects } from "@/lib/getProjects";
 import { notFound } from "next/navigation";
+import { getProjectBySlug, getAllProjectsFromSanity } from "@/lib/sanity/queries";
 import ParallaxImage from "@/components/Projects/ParallaxImage";
+import { urlFor } from "@/lib/sanity/image";
+import Image from "next/image";
+
+export const revalidate = 60;
 
 export async function generateStaticParams() {
-    const projects = getProjects();
+    const projects = await getAllProjectsFromSanity();
     return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default async function ProjectDetail({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
+export default async function ProjectDetail({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const { slug } = await params;
-    const project = getProject(slug);
+    const project = await getProjectBySlug(slug);
 
     if (!project) return notFound();
 
@@ -42,17 +50,26 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                     </div>
                 </div>
 
-                {/* PARALLAX IMAGE (client component) */}
-                <ParallaxImage>
-                    <div className="aspect-[16/8] rounded-3xl border bg-gradient-card flex items-center justify-center text-5xl text-muted-foreground/30">
-                        {project.title}
-                    </div>
-                </ParallaxImage>
+                {/* COVER IMAGE */}
+                {project.cover && (
+                    <ParallaxImage>
+                        <div className="aspect-[16/8] rounded-3xl border overflow-hidden">
+                            <Image
+                                src={urlFor(project.cover).width(1200).auto("format").url()}
+                                alt={project.cover.alt || project.title}
+                                width={1200}
+                                height={600}
+                                className="w-full h-auto"
+                                priority
+                            />
+                        </div>
+                    </ParallaxImage>
+                )}
 
                 {/* CHALLENGE / SOLUTION */}
                 <div className="grid md:grid-cols-2 gap-8 my-16">
                     {[["Challenge", project.challenge], ["Solution", project.solution]].map(
-                        ([title, content], i) => (
+                        ([title, content]) => (
                             <div
                                 key={title}
                                 className="p-8 border rounded-2xl bg-card hover:shadow-lg transition"
@@ -65,32 +82,40 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                 </div>
 
                 {/* RESULTS BAR */}
-                <div className="bg-primary text-primary-foreground rounded-2xl p-10 mb-16">
-                    <h2 className="text-2xl font-bold mb-6">
-                        The numbers that matter.
-                    </h2>
+                {project.results && project.results.length > 0 && (
+                    <div className="bg-primary text-primary-foreground rounded-2xl p-10 mb-16">
+                        <h2 className="text-2xl font-bold mb-6">
+                            The numbers that matter.
+                        </h2>
 
-                    <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                        {project.results.map((r: string) => (
-                            <div
-                                key={r}
-                                className="bg-white/10 p-6 rounded-xl font-bold"
-                            >
-                                {r}
-                            </div>
-                        ))}
+                        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                            {project.results.map((r: string) => (
+                                <div
+                                    key={r}
+                                    className="bg-white/10 p-6 rounded-xl font-bold"
+                                >
+                                    {r}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* GALLERY */}
-                {project.gallery && (
+                {project.gallery && project.gallery.length > 0 && (
                     <div className="grid md:grid-cols-2 gap-6 mb-16">
-                        {project.gallery.map((_, i) => (
+                        {project.gallery.map((img, _i) => (
                             <div
-                                key={i}
-                                className="aspect-video rounded-2xl border bg-gradient-card flex items-center justify-center text-muted-foreground/30"
+                                key={_i}
+                                className="aspect-video rounded-2xl border overflow-hidden"
                             >
-                                Screen {i + 1}
+                                <Image
+                                    src={urlFor(img).width(800).auto("format").url()}
+                                    alt={img.alt || `${project.title} screenshot ${_i + 1}`}
+                                    width={800}
+                                    height={450}
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         ))}
                     </div>

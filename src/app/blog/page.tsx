@@ -7,6 +7,8 @@ export const revalidate = 60; // ISR
 export default async function BlogPage() {
     const blogs = await getAllBlogs();
 
+    console.log("blogs", blogs);
+
     return (
         <Suspense fallback={<div className="pt-32 text-muted-foreground">Loading articles…</div>}>
             <BlogClient blogs={blogs} />
